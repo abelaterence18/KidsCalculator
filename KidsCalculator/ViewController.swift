@@ -41,11 +41,54 @@ class ViewController: UIViewController {
     
     @IBOutlet var AnswerLabel: UILabel!
 
+    @IBOutlet var NumberView: UIView!
+    
+    @IBOutlet var SumView: UIView!
+    
+    @IBOutlet var PlateView: UIView!
+    
+    @IBOutlet var CorrectView: UIView!
+    
+    @IBOutlet var Plate: UIImageView!
+    
+    @IBOutlet var Apple1: DraggedImageView!
+    
+    @IBOutlet var Apple2: DraggedImageView!
+    
+    @IBOutlet var Apple3: DraggedImageView!
+    
+    @IBOutlet var Apple4: DraggedImageView!
+    
+    @IBOutlet var Apple5: DraggedImageView!
+    
+    @IBOutlet var Apple6: DraggedImageView!
+    
+    @IBOutlet var Apple7: DraggedImageView!
+    
+    @IBOutlet var Apple8: DraggedImageView!
+    
+    @IBOutlet var Apple9: DraggedImageView!
+    
+    
+    @IBOutlet var Star3: UIImageView!
+    @IBOutlet var Star2: UIImageView!
+    @IBOutlet var Star1: UIImageView!
+    @IBOutlet var Thumb: UIImageView!
+    @IBOutlet var Star9: UIImageView!
+    @IBOutlet var Star8: UIImageView!
+    @IBOutlet var Star7: UIImageView!
+    @IBOutlet var Star10: UIImageView!
+    @IBOutlet var Star6: UIImageView!
+    @IBOutlet var Star5: UIImageView!
+    @IBOutlet var Star4: UIImageView!
+    
+    
     
     var CorrectAnswer = String()
     
 
-    
+    let W = CGFloat(UIScreen.mainScreen().bounds.width)
+    let H = CGFloat(UIScreen.mainScreen().bounds.height)
     
     
     override func viewDidLoad() {
@@ -56,6 +99,13 @@ class ViewController: UIViewController {
         
     RandomQuestions()
     
+    SetNumberSize()
+        
+    SetSumSize()
+        
+    SetPlateView()
+        
+    SetCorrectView()
     
     
     }
@@ -64,6 +114,67 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func SetNumberSize(){
+        let numberDiameter = 0.15*W
+        NumberView.frame = CGRectMake(0, 0, W, 0.3*H)
+        Button0.frame = CGRectMake((0.14*W)-numberDiameter/2, (0.1*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button1.frame = CGRectMake((0.32*W)-numberDiameter/2, (0.1*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button2.frame = CGRectMake((0.50*W)-numberDiameter/2, (0.1*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button3.frame = CGRectMake((0.68*W)-numberDiameter/2, (0.1*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button4.frame = CGRectMake((0.86*W)-numberDiameter/2, (0.1*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button5.frame = CGRectMake((0.14*W)-numberDiameter/2, (0.2*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button6.frame = CGRectMake((0.32*W)-numberDiameter/2, (0.2*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button7.frame = CGRectMake((0.50*W)-numberDiameter/2, (0.2*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button8.frame = CGRectMake((0.68*W)-numberDiameter/2, (0.2*H)-numberDiameter/2, numberDiameter, numberDiameter)
+        Button9.frame = CGRectMake((0.86*W)-numberDiameter/2, (0.2*H)-numberDiameter/2, numberDiameter, numberDiameter)
+    }
+    
+    
+    func SetSumSize(){
+        SumView.frame = CGRectMake(0, 0.3*H, W, 0.3*H)
+        QuestionLabel.frame = CGRectMake(0.1*W, 0.06*H, 0.8*W, 0.1*H)
+        LabelEnd.frame = CGRectMake(0.1*W, 0.15*H, 0.8*W, 0.08*H)
+
+    }
+    
+    
+    
+    func SetPlateView(){
+        PlateView.frame = CGRectMake(0, 0.6*H, W, 0.4*H)
+        Plate.frame = CGRectMake(0.05*W, 0.22*H, 0.9*W, 0.16*H)
+        Apple1.frame = CGRectMake(0.13*W, 0.255*H, 0.2*W, 0.11*H)
+        Apple2.frame = CGRectMake(0.28*W, 0.26*H, 0.2*W, 0.11*H)
+        Apple3.frame = CGRectMake(0.43*W, 0.26*H, 0.2*W, 0.11*H)
+        Apple4.frame = CGRectMake(0.58*W, 0.255*H, 0.2*W, 0.11*H)
+        Apple5.frame = CGRectMake(0.73*W, 0.23*H, 0.2*W, 0.11*H)
+        Apple6.frame = CGRectMake(0.14*W, 0.18*H, 0.2*W, 0.11*H)
+        Apple7.frame = CGRectMake(0.3*W, 0.18*H, 0.2*W, 0.11*H)
+        Apple8.frame = CGRectMake(0.45*W, 0.18*H, 0.2*W, 0.11*H)
+        Apple9.frame = CGRectMake(0.6*W, 0.175*H, 0.2*W, 0.11*H)
+        
+    }
+    
+    
+    func SetCorrectView(){
+        CorrectView.frame = CGRectMake(0, 0, W, 1*H)
+        Next.frame = CGRectMake(0.4*W, 0.39*H, 0.6*W, 0.3*H)
+        AnswerLabel.frame = CGRectMake(0.4*W, 0.25*H, 0.3*W, 0.1*H)
+        Thumb.frame = CGRectMake(0, 0.42*H, 0.39*W, 0.2*H)
+        Star1.frame = CGRectMake(0.07*W, 0.1*H, 0.1*W, 0.1*H)
+        Star2.frame = CGRectMake(0.27*W, 0.1*H, 0.1*W, 0.1*H)
+        Star3.frame = CGRectMake(0.47*W, 0.1*H, 0.1*W, 0.1*H)
+        Star4.frame = CGRectMake(0.67*W, 0.1*H, 0.1*W, 0.1*H)
+        Star5.frame = CGRectMake(0.87*W, 0.1*H, 0.1*W, 0.1*H)
+        Star6.frame = CGRectMake(0.07*W, 0.8*H, 0.1*W, 0.1*H)
+        Star7.frame = CGRectMake(0.27*W, 0.8*H, 0.1*W, 0.1*H)
+        Star8.frame = CGRectMake(0.47*W, 0.8*H, 0.1*W, 0.1*H)
+        Star9.frame = CGRectMake(0.67*W, 0.8*H, 0.1*W, 0.1*H)
+        Star10.frame = CGRectMake(0.87*W, 0.8*H, 0.1*W, 0.1*H)
+    }
+    
+    
+    
     
     
     func ShowCorrectView(answer: String){
